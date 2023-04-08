@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.CollectionCondition.itemWithText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class GitHubSelenideTest {
+public class GitHubSelenideTest extends BaseTest {
 
     @Test
     public void selenidePageTest() {

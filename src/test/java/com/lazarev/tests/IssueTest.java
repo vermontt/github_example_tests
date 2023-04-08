@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
  */
 @Epic("Проверка Github элементов")
 @Feature("Проверка navbar")
-public class IssueTest {
+public class IssueTest extends BaseTest {
 
     @Test
     @Story("Проверка наличия элемента 'Issues' #1")
