@@ -1,7 +1,9 @@
 package com.lazarev.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.lazarev.config.AuthConfig;
 import com.lazarev.helpers.Attach;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -9,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static java.lang.System.getProperty;
 
 public class BaseTest {
+
+    public static AuthConfig authConfig = ConfigFactory.newInstance().create(AuthConfig.class);
 
     @BeforeAll
     static void setUp() {
@@ -21,7 +25,11 @@ public class BaseTest {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-        Configuration.remote = getProperty("URLRemoteBrowser");
+        Configuration.remote = "https://"
+                + authConfig.getLogin()
+                + ":"
+                + authConfig.getPassword()
+                + "@selenoid.autotests.cloud/wd/hub/";
     }
 
     @AfterAll
