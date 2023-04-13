@@ -10,8 +10,6 @@ import static java.lang.System.getProperty;
 
 public class BaseTest {
 
-
-
     @BeforeAll
     static void setUp() {
         Configuration.browser = getProperty("browser");
@@ -23,7 +21,7 @@ public class BaseTest {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = getProperty("URLRemoteBrowser");
     }
 
     @AfterAll
