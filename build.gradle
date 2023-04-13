@@ -24,10 +24,26 @@ dependencies {
             'com.codeborne:selenide:5.24.0',
             'org.assertj:assertj-core:3.23.1',
             'com.github.javafaker:javafaker:1.0.2',
+            'org.aeonbits.owner:owner:1.0.12',
             'io.qameta.allure:allure-selenide:2.20.1')
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Test) {
+    systemProperty("browser", System.getProperty("browser", "chrome"))
+    systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
+    systemProperty("sizeWindow", System.getProperty("sizeWindow", "true"))
+    systemProperties(System.getProperties())
+}
+
+task smoke_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "oneTest"
+        includeTags "twoTest"
+        excludeTags "anyTest"
+    }
 }

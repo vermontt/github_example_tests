@@ -1,7 +1,7 @@
 package com.lazarev.tests;
 
-import com.lazarev.helpers.Attach;
 import io.qameta.allure.Story;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.itemWithText;
@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class GitHubSelenideTest extends BaseTest {
 
     @Test
+    @Tag("oneTest")
     @Story("Test github")
     public void selenidePageTest() {
         open("https://github.com/selenide/selenide");

@@ -4,6 +4,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.itemWithText;
@@ -19,6 +20,7 @@ import static io.qameta.allure.Allure.step;
 public class IssueTest extends BaseTest {
 
     @Test
+    @Tag("anyTest")
     @Story("Проверка наличия элемента 'Issues' #1")
     @Owner("Евгений")
     public void issueGithubTest() {
@@ -30,6 +32,7 @@ public class IssueTest extends BaseTest {
     }
 
     @Test
+    @Tag("twoTest")
     @Story("Проверка наличия элемента 'Issues' #2")
     @Owner("Евгений")
     public void issueGithubTest2() {
