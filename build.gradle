@@ -37,6 +37,7 @@ tasks.withType(Test) {
     systemProperty("browser", System.getProperty("browser", "chrome"))
     systemProperty("browserSize", System.getProperty("browserSize", "1920x1080"))
     systemProperty("sizeWindow", System.getProperty("sizeWindow", "true"))
+    systemProperty("host", System.getProperty("host", "local"))
     systemProperty("URLRemoteBrowser", System.getProperty("URLRemoteBrowser",
             "@selenoid.autotests.cloud/wd/hub/"))
     systemProperties(System.getProperties())
