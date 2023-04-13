@@ -25,14 +25,11 @@ public class BaseTest {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-        String env = System.getProperty("host");
-
-        Configuration.remote = (env.equals("local")) ? ("https://"
+        Configuration.remote = "https://"
                 + authConfig.getLogin()
                 + ":"
                 + authConfig.getPassword()
-                + getProperty("URLRemoteBrowser"))
-                : getProperty("URLRemoteBrowser");
+                + getProperty("URLRemoteBrowser");
     }
 
     @AfterAll
