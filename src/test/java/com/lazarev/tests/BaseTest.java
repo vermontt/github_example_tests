@@ -29,7 +29,7 @@ public class BaseTest {
                 + authConfig.getLogin()
                 + ":"
                 + authConfig.getPassword()
-                + "@selenoid.autotests.cloud/wd/hub/";
+                + getProperty("URLRemoteBrowser");
     }
 
     @AfterAll
